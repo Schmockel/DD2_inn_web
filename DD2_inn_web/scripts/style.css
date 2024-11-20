@@ -1,0 +1,60 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: space-around;
+    padding: 50px;
+}
+
+#container {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+}
+
+.box, .draggable {
+    width: 150px;
+    height: 150px;
+    border: 2px solid #333;
+    margin: 10px;
+    text-align: center;
+    position: relative;
+}
+
+/* A caixa à esquerda será transparente */
+.box {
+    background-color: transparent; /* Torna a caixa transparente */
+    overflow: hidden; /* Garante que nada ultrapasse a área da caixa */
+}
+
+/* A imagem dentro da caixa será ajustada para preencher toda a caixa */
+.box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;  /* Ajuste de proporção para cobrir a área da caixa */
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1; /* Garante que a imagem fique por baixo da área visível da caixa */
+}
+
+/* Estilos para os quadrados à direita */
+.draggable img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.draggable {
+    cursor: grab;
+}
+
+/* Estilos para quando o item está sendo arrastado */
+.box-over {
+    background-color: #cce7ff;
+    border: 2px dashed #0099ff;
+}
+
+/* Para a caixa que contém a imagem */
+.box img {
+    filter: grayscale(50%); /* Exemplo de alteração de cor */
+}
